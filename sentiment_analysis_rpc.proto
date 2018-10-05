@@ -3,7 +3,7 @@ syntax = "proto3";
 package sentiment_analysis_rpc;
 
 service ShowMessage {
-    rpc show(InputMessage) returns (OutputMessage) {}
+    rpc Show(InputMessage) returns (OutputMessage) {}
 }
 
 message InputMessage {

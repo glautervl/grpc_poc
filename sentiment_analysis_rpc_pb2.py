@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='sentiment_analysis_rpc.proto',
   package='sentiment_analysis_rpc',
   syntax='proto3',
-  serialized_pb=_b('\n\x1csentiment_analysis_rpc.proto\x12\x16sentiment_analysis_rpc\"\x1d\n\x0cInputMessage\x12\r\n\x05value\x18\x01 \x01(\t\"\x1e\n\rOutputMessage\x12\r\n\x05value\x18\x01 \x01(\t\"o\n\x12TwitterCredentials\x12\x14\n\x0c\x63onsumer_key\x18\x01 \x01(\t\x12\x17\n\x0f\x63onsumer_secret\x18\x02 \x01(\t\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x03 \x01(\t\x12\x14\n\x0ctoken_secret\x18\x04 \x01(\t\"\xb4\x02\n\x13TwitterInputMessage\x12?\n\x0b\x63redentials\x18\x01 \x01(\x0b\x32*.sentiment_analysis_rpc.TwitterCredentials\x12\x0f\n\x07product\x18\x02 \x01(\t\x12\x13\n\x0b\x65nvironment\x18\x03 \x01(\t\x12\x11\n\tlanguages\x18\x04 \x01(\t\x12\r\n\x05query\x18\x05 \x01(\t\x12\x1c\n\x14messages_per_request\x18\x06 \x01(\x05\x12\x1a\n\x12max_requests_limit\x18\x07 \x01(\x05\x12\x11\n\tmsg_limit\x18\x08 \x01(\x05\x12\x12\n\ntime_limit\x18\t \x01(\x05\x12\x11\n\tfrom_date\x18\n \x01(\t\x12\x0f\n\x07to_date\x18\x0b \x01(\t\x12\x0f\n\x07\x64\x62_name\x18\x0c \x01(\t\"%\n\x14TwitterOutputMessage\x12\r\n\x05value\x18\x01 \x01(\t2d\n\x0bShowMessage\x12U\n\x04show\x12$.sentiment_analysis_rpc.InputMessage\x1a%.sentiment_analysis_rpc.OutputMessage\"\x00\x32\x80\x01\n\x1aSentimentConsensusAnalysis\x12\x62\n\x11\x43onsensusAnalysis\x12$.sentiment_analysis_rpc.InputMessage\x1a%.sentiment_analysis_rpc.OutputMessage\"\x00\x32\x87\x01\n\x19TwitterHistoricalAnalysis\x12j\n\x12HistoricalAnalysis\x12+.sentiment_analysis_rpc.TwitterInputMessage\x1a%.sentiment_analysis_rpc.OutputMessage\"\x00\x32\x7f\n\x15TwitterStreamAnalysis\x12\x66\n\x0eStreamAnalysis\x12+.sentiment_analysis_rpc.TwitterInputMessage\x1a%.sentiment_analysis_rpc.OutputMessage\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x1csentiment_analysis_rpc.proto\x12\x16sentiment_analysis_rpc\"\x1d\n\x0cInputMessage\x12\r\n\x05value\x18\x01 \x01(\t\"\x1e\n\rOutputMessage\x12\r\n\x05value\x18\x01 \x01(\t\"o\n\x12TwitterCredentials\x12\x14\n\x0c\x63onsumer_key\x18\x01 \x01(\t\x12\x17\n\x0f\x63onsumer_secret\x18\x02 \x01(\t\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x03 \x01(\t\x12\x14\n\x0ctoken_secret\x18\x04 \x01(\t\"\xb4\x02\n\x13TwitterInputMessage\x12?\n\x0b\x63redentials\x18\x01 \x01(\x0b\x32*.sentiment_analysis_rpc.TwitterCredentials\x12\x0f\n\x07product\x18\x02 \x01(\t\x12\x13\n\x0b\x65nvironment\x18\x03 \x01(\t\x12\x11\n\tlanguages\x18\x04 \x01(\t\x12\r\n\x05query\x18\x05 \x01(\t\x12\x1c\n\x14messages_per_request\x18\x06 \x01(\x05\x12\x1a\n\x12max_requests_limit\x18\x07 \x01(\x05\x12\x11\n\tmsg_limit\x18\x08 \x01(\x05\x12\x12\n\ntime_limit\x18\t \x01(\x05\x12\x11\n\tfrom_date\x18\n \x01(\t\x12\x0f\n\x07to_date\x18\x0b \x01(\t\x12\x0f\n\x07\x64\x62_name\x18\x0c \x01(\t\"%\n\x14TwitterOutputMessage\x12\r\n\x05value\x18\x01 \x01(\t2d\n\x0bShowMessage\x12U\n\x04Show\x12$.sentiment_analysis_rpc.InputMessage\x1a%.sentiment_analysis_rpc.OutputMessage\"\x00\x32\x80\x01\n\x1aSentimentConsensusAnalysis\x12\x62\n\x11\x43onsensusAnalysis\x12$.sentiment_analysis_rpc.InputMessage\x1a%.sentiment_analysis_rpc.OutputMessage\"\x00\x32\x87\x01\n\x19TwitterHistoricalAnalysis\x12j\n\x12HistoricalAnalysis\x12+.sentiment_analysis_rpc.TwitterInputMessage\x1a%.sentiment_analysis_rpc.OutputMessage\"\x00\x32\x7f\n\x15TwitterStreamAnalysis\x12\x66\n\x0eStreamAnalysis\x12+.sentiment_analysis_rpc.TwitterInputMessage\x1a%.sentiment_analysis_rpc.OutputMessage\"\x00\x62\x06proto3')
 )
 
 
@@ -332,8 +332,8 @@ _SHOWMESSAGE = _descriptor.ServiceDescriptor(
   serialized_end=682,
   methods=[
   _descriptor.MethodDescriptor(
-    name='show',
-    full_name='sentiment_analysis_rpc.ShowMessage.show',
+    name='Show',
+    full_name='sentiment_analysis_rpc.ShowMessage.Show',
     index=0,
     containing_service=None,
     input_type=_INPUTMESSAGE,

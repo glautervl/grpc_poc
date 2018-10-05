@@ -14,8 +14,8 @@ class ShowMessageStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.show = channel.unary_unary(
-        '/sentiment_analysis_rpc.ShowMessage/show',
+    self.Show = channel.unary_unary(
+        '/sentiment_analysis_rpc.ShowMessage/Show',
         request_serializer=sentiment__analysis__rpc__pb2.InputMessage.SerializeToString,
         response_deserializer=sentiment__analysis__rpc__pb2.OutputMessage.FromString,
         )
@@ -25,7 +25,7 @@ class ShowMessageServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def show(self, request, context):
+  def Show(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -35,8 +35,8 @@ class ShowMessageServicer(object):
 
 def add_ShowMessageServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'show': grpc.unary_unary_rpc_method_handler(
-          servicer.show,
+      'Show': grpc.unary_unary_rpc_method_handler(
+          servicer.Show,
           request_deserializer=sentiment__analysis__rpc__pb2.InputMessage.FromString,
           response_serializer=sentiment__analysis__rpc__pb2.OutputMessage.SerializeToString,
       ),
