@@ -68,21 +68,21 @@ var ProtoServices = function(){
 // var tempFunction = new Function('name', 'return console.log("Olá, " + name + "!");');
 // tempFunction('Cássio');
 
-// var basic_proto = grpc.loadPackageDefinition(packageDefinition).basicmessage;
+var basic_proto = grpc.loadPackageDefinition(packageDefinition).basicmessage;
 
-// function main() {
-//   var client = new basic_proto.BasicService('localhost:50051', grpc.credentials.createInsecure());
+function main() {
+  var client = new basic_proto.BasicService('localhost:50051', grpc.credentials.createInsecure());
 
-//   var user;
-//   if (process.argv.length >= 3) {
-//     user = process.argv[2];
-//   } else {
-//     user = 'I am a node client ! Nice to meet you :)';
-//   }
-//   client.showMessage({name: user}, function(err, response) {
-//     console.log('Show message:', response.message);
-//   });
-// }
+  var user;
+  if (process.argv.length >= 3) {
+    user = process.argv[2];
+  } else {
+    user = 'I am a node client ! Nice to meet you :)';
+  }
+  client.showMessage({name: user}, function(err, response) {
+    console.log('Show message:', response.message);
+  });
+}
 
 // var basic_proto = grpc.loadPackageDefinition(packageDefinition).sentiment_analysis_rpc;
 // // console.log(basic_proto);
@@ -99,20 +99,20 @@ var ProtoServices = function(){
 //   });
 // }
 
-var basic_proto = grpc.loadPackageDefinition(packageDefinition).basicmessage;
+// var basic_proto = grpc.loadPackageDefinition(packageDefinition).basicmessage;
 
-function main() {
-  var client = new basic_proto.BasicService('http://ec2-54-87-209-42.compute-1.amazonaws.com:50051', grpc.credentials.createInsecure());
+// function main() {
+//   var client = new basic_proto.BasicService('http://ec2-54-87-209-42.compute-1.amazonaws.com:50051', grpc.credentials.createInsecure());
 
-  var user;
-  if (process.argv.length >= 3) {
-    user = process.argv[2];
-  } else {
-    user = 'I am a node client ! Nice to meet you :)';
-  }
-  client.showMessage({name: user}, function(err, response) {
-    console.log('Show message:', response.message);
-  });
-}
+//   var user;
+//   if (process.argv.length >= 3) {
+//     user = process.argv[2];
+//   } else {
+//     user = 'I am a node client ! Nice to meet you :)';
+//   }
+//   client.showMessage({name: user}, function(err, response) {
+//     console.log('Show message:', response.message);
+//   });
+// }
 
 main();
