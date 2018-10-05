@@ -4,22 +4,22 @@ import time
 
 import grpc
 
-import basicmessage_pb2
-import basicmessage_pb2_grpc
+import sentiment_analysis_rpc_pb2
+import sentiment_analysis_rpc_pb2_grpc
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
-class BasicService(basicmessage_pb2_grpc.BasicServiceServicer):
+class ShowMessageServicer(sentiment_analysis_rpc_pb2_grpc.ShowMessageServicer):
 
-    def ShowMessage(self, request, context):
-        return basicmessage_pb2.OutputMessage(message='I am the python server, who are you ? , %s!' % request.name)
+    def Show(self, request, context):
+        return sentiment_analysis_rpc_pb2.OutputMessage(value='I am the python server, who are you ? , %s!' % request.value)
 
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    basicmessage_pb2_grpc.add_BasicServiceServicer_to_server(BasicService(), server)
-    server.add_insecure_port('[::]:50051')
+    sentiment_analysis_rpc_pb2_grpc.add_ShowMessageServicer_to_server(ShowMessageServicer(), server)
+    server.add_insecure_port('[::]:7016')
     server.start()
     try:
         while True:

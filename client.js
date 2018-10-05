@@ -130,6 +130,8 @@ function main() {
   var consensusClient = new basic_proto.SentimentConsensusAnalysis('54.87.209.42:7011', grpc.credentials.createInsecure());
   // var client = new basic_proto.ShowMessage('localhost:7016', grpc.credentials.createInsecure());
 
+  console.log(showClient)
+
   showClient.Show({value: "testandoooo"}, function(err, response) {
     console.log(JSON.stringify(response));
     if(err === undefined){
