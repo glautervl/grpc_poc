@@ -126,11 +126,23 @@ var basic_proto = grpc.loadPackageDefinition(packageDefinition).sentiment_analys
 
 function main() {
   // var client = new basic_proto.ShowMessage('http://ec2-54-87-209-42.compute-1.amazonaws.com:7016', grpc.credentials.createInsecure());
-  var client = new basic_proto.ShowMessage('54.87.209.42:7011', grpc.credentials.createInsecure());
+  var showClient = new basic_proto.ShowMessage('54.87.209.42:7011', grpc.credentials.createInsecure());
+  var consensusClient = new basic_proto.SentimentConsensusAnalysis('54.87.209.42:7011', grpc.credentials.createInsecure());
+  // var client = new basic_proto.ShowMessage('localhost:7016', grpc.credentials.createInsecure());
 
-  client.Show({value: "testandoooo"}, function(err, response) {
+  showClient.Show({value: "testandoooo"}, function(err, response) {
     console.log(JSON.stringify(response));
-    console.log(JSON.stringify(err));
+    if(err === undefined){
+      console.log("ShowMessage Method error: " + JSON.stringify(err));  
+    }
+    
+  });
+
+  consensusClient.ConsensusAnalysis({value: "U29tZSB0ZXh0IGlucHV0"}, function(err, response) {
+    console.log(JSON.stringify(response));
+    if(err === undefined) {
+      console.log("ConsensusAnalysis Method error: " + JSON.stringify(err));  
+    }
   });
 }
 

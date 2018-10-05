@@ -12,7 +12,7 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 class ShowMessageServicer(sentiment_analysis_rpc_pb2_grpc.ShowMessageServicer):
 
-    def show(self, request, context):
+    def Show(self, request, context):
         return sentiment_analysis_rpc_pb2.OutputMessage(value='I am the python server, who are you ? , %s!' % request.value)
 
 
