@@ -19,7 +19,7 @@ class ShowMessageServicer(sentiment_analysis_rpc_pb2_grpc.ShowMessageServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     sentiment_analysis_rpc_pb2_grpc.add_ShowMessageServicer_to_server(ShowMessageServicer(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('[::]:7016')
     server.start()
     try:
         while True:

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package basicmessagepkg;
+package basicmessage;
 
 service BasicService {
   rpc ShowMessage (SimpleMessage) returns (OutputMessage) {}
