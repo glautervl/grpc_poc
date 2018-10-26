@@ -1,0 +1,136 @@
+{
+  "nested": {
+    "sentiment_analysis_rpc": {
+      "nested": {
+        "ShowMessage": {
+          "methods": {
+            "Show": {
+              "requestType": "InputMessage",
+              "responseType": "OutputMessage"
+            }
+          }
+        },
+        "InputMessage": {
+          "fields": {
+            "value": {
+              "type": "string",
+              "id": 1
+            }
+          }
+        },
+        "OutputMessage": {
+          "fields": {
+            "value": {
+              "type": "string",
+              "id": 1
+            }
+          }
+        },
+        "TwitterCredentials": {
+          "fields": {
+            "consumerKey": {
+              "type": "string",
+              "id": 1
+            },
+            "consumerSecret": {
+              "type": "string",
+              "id": 2
+            },
+            "accessToken": {
+              "type": "string",
+              "id": 3
+            },
+            "tokenSecret": {
+              "type": "string",
+              "id": 4
+            }
+          }
+        },
+        "TwitterInputMessage": {
+          "fields": {
+            "credentials": {
+              "type": "TwitterCredentials",
+              "id": 1
+            },
+            "product": {
+              "type": "string",
+              "id": 2
+            },
+            "environment": {
+              "type": "string",
+              "id": 3
+            },
+            "languages": {
+              "type": "string",
+              "id": 4
+            },
+            "query": {
+              "type": "string",
+              "id": 5
+            },
+            "messagesPerRequest": {
+              "type": "int32",
+              "id": 6
+            },
+            "maxRequestsLimit": {
+              "type": "int32",
+              "id": 7
+            },
+            "msgLimit": {
+              "type": "int32",
+              "id": 8
+            },
+            "timeLimit": {
+              "type": "int32",
+              "id": 9
+            },
+            "fromDate": {
+              "type": "string",
+              "id": 10
+            },
+            "toDate": {
+              "type": "string",
+              "id": 11
+            },
+            "dbName": {
+              "type": "string",
+              "id": 12
+            }
+          }
+        },
+        "TwitterOutputMessage": {
+          "fields": {
+            "value": {
+              "type": "string",
+              "id": 1
+            }
+          }
+        },
+        "SentimentConsensusAnalysis": {
+          "methods": {
+            "ConsensusAnalysis": {
+              "requestType": "InputMessage",
+              "responseType": "OutputMessage"
+            }
+          }
+        },
+        "TwitterHistoricalAnalysis": {
+          "methods": {
+            "HistoricalAnalysis": {
+              "requestType": "TwitterInputMessage",
+              "responseType": "OutputMessage"
+            }
+          }
+        },
+        "TwitterStreamAnalysis": {
+          "methods": {
+            "StreamAnalysis": {
+              "requestType": "TwitterInputMessage",
+              "responseType": "OutputMessage"
+            }
+          }
+        }
+      }
+    }
+  }
+}
